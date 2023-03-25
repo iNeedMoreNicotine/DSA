@@ -69,11 +69,32 @@ void addElement(int A[], int num){
 }
 
 // search algos
-int seqSearch(){}
+int seqSearch_improved(int key, int A[], int len){
+    for(int i = 0; i < len; i++){
+        if(A[i] == key){
+            return i;
+        } else if(A[i] > key){
+            return -1;
+        }
+    }
+}
 
-int seqSearch_improved(){}
+int binSearch(int key, int A[], int len){
+    int l = 0;
+    int r = len;
 
-int binSearch(){}
+    while(l <= r){
+        int mid = (l+r)/2;
+        if(A[mid] == key){
+            return mid;
+        } else if(A[mid] > key){
+            r = mid-1;
+        } else{
+            l = mid+1;
+        }
+    }
+    return -1;
+}
 
 int randint(int min, int max){
     int x = rand() % (max - min + 1) + min;
@@ -93,15 +114,15 @@ void printArr(int A[], int len){
 }
 
 int main(){
-    // int tmp[12] = {5, 2, 6, 9, 52, 69, 5269, 6952, 25, 96, 9625, 2596};
-    // for(int i = 0; i < 12; i++){
-    //     addElement(arr, tmp[i]);
-    // }
-
-    srand(time(NULL));
-    for(int i = 0; i < 25; i++){
-        addElement(arr, randint(0, 69));
+    int tmp[12] = {5, 2, 6, 9, 52, 69, 5269, 6952, 25, 96, 9625, 2596};
+    for(int i = 0; i < 12; i++){
+        addElement(arr, tmp[i]);
     }
+
+    // srand(time(NULL));
+    // for(int i = 0; i < 25; i++){
+    //     addElement(arr, randint(0, 69));
+    // }
 
     printf("original array:\n");
     printArr(arr, lenOfArr);
@@ -118,6 +139,24 @@ int main(){
 
     // removeByIndex(arr, 0, lenOfArr);
     // printArr(arr, lenOfArr);
+
+    // // seq search
+    // printf("search for 69:\n");
+    // int index = seqSearch_improved(69, arr, lenOfArr);
+    // if(index == -1){
+    //     printf("69 does not exist!\n");
+    // } else{
+    //     printf("69 founded! location = %d\n", index);
+    // }
+
+    // binary search
+    printf("search for 5269:\n");
+    int index = binSearch(5269, arr, lenOfArr);
+    if(index == -1){
+        printf("5269 does not exist!\n");
+    } else{
+        printf("5269 founded! location in arr = %d\n", index);
+    }
 
     printf("\n");
 }
