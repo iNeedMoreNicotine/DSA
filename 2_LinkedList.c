@@ -76,8 +76,7 @@ void printList(struct LinkedList* list){
         printf("%d, ", cursor -> data);
         cursor = cursor -> next;
     }
-    printf("%d", cursor -> data);
-    printf("]\n");
+    printf("%d]\n", cursor -> data);
 }
 
 int randint(int min, int max){
