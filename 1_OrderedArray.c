@@ -113,6 +113,9 @@ void printArr(int A[], int len){
     }
 }
 
+
+
+
 int main(){
     int tmp[12] = {5, 2, 6, 9, 52, 69, 5269, 6952, 25, 96, 9625, 2596};
     for(int i = 0; i < 12; i++){
