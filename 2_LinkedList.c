@@ -84,6 +84,25 @@ int randint(int min, int max){
     return x;
 }
 
+void reverseList(struct LinkedList *list){
+    struct Node *cursor = (*list).head;
+    struct Node *prev_tmp = NULL;
+    struct Node *next_tmp;
+
+    while(cursor != NULL){
+        next_tmp = (*cursor).next;
+        (*cursor).next = prev_tmp;
+        prev_tmp = cursor;
+        if(next_tmp == NULL){
+            break;
+        }
+        else{
+            cursor = next_tmp;
+        }
+    }
+    (*list).head = cursor;
+}
+
 
 
 
