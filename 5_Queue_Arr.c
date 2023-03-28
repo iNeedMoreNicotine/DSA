@@ -96,9 +96,8 @@ int main(){
     }
     display();
 
-    enqueue(5);
-    enqueue(2);
-    enqueue(69);
+    printf("enque 1 number:\n");
+    enqueue(96);
     display();
 
     return 0;
