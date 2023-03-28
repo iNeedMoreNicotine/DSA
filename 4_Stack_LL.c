@@ -22,7 +22,7 @@ void push(int num){
 
 int pop(){
     if(top == NULL){
-        printf("Empty stack...\n");
+        printf("Stack underflow...\n");
         return -1;
     }
     else{
@@ -37,7 +37,7 @@ int pop(){
 
 void display(){
     if(top == NULL){
-        printf("Empty stack...\n");
+        printf("Empty stack!\n");
         return;
     }
 

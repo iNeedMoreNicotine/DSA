@@ -8,7 +8,7 @@ int top = -1;
 
 void push(int num){
     if(top == max_size - 1){
-        printf("Stack overflow\n");
+        printf("Stack overflow...\n");
         return;
     }
     top++;
@@ -18,7 +18,7 @@ void push(int num){
 
 int pop(){
     if(top == -1){
-        printf("Stack underflow\n");
+        printf("Stack underflow...\n");
         return -1;
     }
     int num = stack[top];
@@ -28,7 +28,7 @@ int pop(){
 
 void display(){
     if(top == -1){
-        printf("Empty stack...\n");
+        printf("Empty stack!\n");
     }
     else{
         int temp = top;

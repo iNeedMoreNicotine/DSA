@@ -42,7 +42,7 @@ int dequeue(struct Queue *queue){
     struct Node *temp = queue -> first;
 
     if(queue -> length == 0){
-        printf("Empty queue...\n");
+        printf("Bruh, u can't dequeue if the queue is empty...\n");
         return -1;
     }
     else{
@@ -56,7 +56,7 @@ int dequeue(struct Queue *queue){
 
 void display(struct Queue *queue){
     if(queue -> length == 0){
-        printf("Empty queue...\n");
+        printf("Empty queue!\n");
         return;
     }
     struct Node *cursor = queue -> first;
