@@ -1,7 +1,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <time.h>
-# define max_size 5
+# define max_size 10
 
 int queue[max_size];
 int length = 0;
@@ -67,38 +67,37 @@ void display(){
     }
 }
 
-int main(){
-    int nums[] = {0, 5, 2, 6, 9, 25, 52, 69, 96, 5269};
-    
-    printf("enqueue 5 numbers:\n");
-    for(int i = 0; i < 5; i++){
-        enqueue(nums[i]);
-        }
-    display();
+int randint(int min, int max){
+    int x = rand() % (max - min + 1) + min;
+    return x;
+}
 
-    printf("dequeue 4 numbers:\n");
+void enqueue_randint(int n){
+    printf("enqueue %d nums:\n", n);
     int times = 0;
-    while(times < 4){
+    while(times < n){
+        enqueue(randint(0, 69));
+        times++;
+    }
+    display();
+}
+
+void dequeue_randint(int n){
+    printf("dequeue %d nums:\n", n);
+    int times = 0;
+    while(times < n){
         dequeue();
         times++;
     }
     display();
+}
 
-    printf("enque 3 numbers:\n");
-    for(int j = 5; j < 8; j++){
-        enqueue(nums[j]);
+
+int main(){
+    for(int i = 10; i > 0; i--){
+        enqueue_randint(i);
+        dequeue_randint(i-1);
     }
-    display();
-
-    printf("deque 2 numbers:\n");
-    for(int k = 8; k < 10; k++){
-        dequeue();
-    }
-    display();
-
-    printf("enque 1 number:\n");
-    enqueue(96);
-    display();
-
+    
     return 0;
 }
