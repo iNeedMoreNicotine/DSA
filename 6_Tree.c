@@ -17,6 +17,7 @@ struct Node* createNode(int num){
     return newNode;
 }
 
+// binary search tree
 struct Node* insertNode(struct Node *root, int num){
     if(root == NULL){
         root = createNode(num);
