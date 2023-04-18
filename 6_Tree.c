@@ -1,5 +1,6 @@
 # include <stdio.h>
 # include <stdlib.h>
+# include <time.h>
 
 struct Node{
     int data;
@@ -28,7 +29,6 @@ struct Node* insertNode(struct Node *root, int num){
     else{
         root -> right = insertNode(root -> right, num);
     }
-
     return root;
 }
 
@@ -38,20 +38,32 @@ void inOrderTraversal(struct Node *root){
         printf("%d ", root -> data);
         inOrderTraversal(root -> right);
     }
-    
     return;
+}
+
+int randint(int min, int max){
+    int x = rand() % (max - min + 1) + min;
+    return x;
 }
 
 int main(){
     struct Node *root = NULL;
-    int nums[] = {5, 3, 7, 1, 4, 6, 8, 2};
-    for(int i = 0; i < 8; i++){
-        root = insertNode(root, nums[i]);
+    int arr[10];
+    for(int i = 0; i < 10; i++){
+        arr[i] = randint(0, 69);
+    }
+    printf("Origin Array:\n");
+    for(int i = 0; i < 10; i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    for(int i = 0; i < 10; i++){
+        root = insertNode(root, arr[i]);
     }
 
-    printf("In-Order Traversal of Tree: ");
+    printf("In Order Traversal of Bin Search Tree:\n");
     inOrderTraversal(root);
     printf("\n");
-
+    
     return 0;
 }
