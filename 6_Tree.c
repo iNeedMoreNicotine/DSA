@@ -46,6 +46,9 @@ int randint(int min, int max){
     return x;
 }
 
+
+
+
 int main(){
     struct Node *root = NULL;
     int arr[10];

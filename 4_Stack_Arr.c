@@ -41,6 +41,9 @@ void display(){
     }
 }
 
+
+
+
 int main(){
     int nums[] = {0, 5, 2, 6, 9, 25, 52, 69, 96, 5269};
     for(int i = 0; i < 10; i++){
