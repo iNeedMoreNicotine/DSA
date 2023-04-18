@@ -24,9 +24,11 @@ struct Node* insertNode(struct Node *root, int num){
         root = createNode(num);
     }
     else if(num <= root -> data){
+        // insert to left subtree
         root -> left = insertNode(root -> left, num);
     }
     else{
+        // insert to right subtree
         root -> right = insertNode(root -> right, num);
     }
     return root;
@@ -50,6 +52,7 @@ int randint(int min, int max){
 
 
 int main(){
+    srand(time(NULL));
     struct Node *root = NULL;
     int arr[10];
     for(int i = 0; i < 10; i++){
