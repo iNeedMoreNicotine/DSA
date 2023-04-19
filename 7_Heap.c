@@ -76,33 +76,37 @@ int main() {
     int arr[] = {52, 69, 37, 22, 31};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    printf("Original Array: ");
+    printf("Original Array:\n");
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
+    printf("\n");
 
     buildMaxHeap(arr, n);
-
-    printf("\nMax Heap: ");
+    printf("Max Heap:\n");
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
+    printf("\n");
 
     insertMaxHeap(arr, &n, 34);
-    printf("\nMax Heap after inserting 34: ");
+    printf("Max Heap after inserting 34:\n");
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
+    printf("\n");
 
     int max = removeMaxHeap(arr, &n);
-    printf("\nMax Element removed from Max Heap: %d", max);
+    printf("Max Element removed from Max Heap:\n");
+    printf("%d\n", max);
 
-    printf("\nMax Heap after removing max element: ");
+    printf("Max Heap after removing max element:\n");
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
+    printf("\n");
 
     heapSort(arr, n);
-
-    printf("\nSorted Array using Heap Sort: ");
+    printf("Sorted Array using Heap Sort:\n");
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
+    printf("\n");
 
     return 0;
 }
