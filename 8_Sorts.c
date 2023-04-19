@@ -29,20 +29,20 @@ int selectionSort(int arr[], int len){
     }
 }
 
-void insert(int A[], int index){
-    int tmp = A[index];
-    int i = index-1;
+void insert(int arr[], int index){
+    int temp = arr[index];
+    int i = index - 1;
 
-    while(i > -1 && A[i] > tmp){
-        A[i+1] = A[i];
+    while(i > -1 && arr[i] > temp){
+        arr[i+1] = arr[i];
         i -= 1;
     }
-    A[i+1] = tmp;
+    arr[i+1] = temp;
 }
 
-void insertionSort(int A[], int len){
+void insertionSort(int arr[], int len){
     for(int i = 0; i < len; i++){
-        insert(A, i);
+        insert(arr, i);
     }
 }
 
