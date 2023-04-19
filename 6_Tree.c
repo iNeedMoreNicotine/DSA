@@ -31,7 +31,6 @@ struct Node* insertNode(struct Node *root, int num){
         // insert to right subtree
         root -> right = insertNode(root -> right, num);
     }
-    return root;
 }
 
 void inOrderTraversal(struct Node *root){
@@ -54,16 +53,16 @@ int randint(int min, int max){
 int main(){
     srand(time(NULL));
     struct Node *root = NULL;
-    int arr[10];
-    for(int i = 0; i < 10; i++){
+    int arr[20];
+    for(int i = 0; i < 20; i++){
         arr[i] = randint(0, 69);
     }
     printf("Origin Array:\n");
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 20; i++){
         printf("%d ", arr[i]);
     }
     printf("\n");
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 20; i++){
         root = insertNode(root, arr[i]);
     }
 
