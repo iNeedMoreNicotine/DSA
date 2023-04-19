@@ -31,6 +31,7 @@ struct Node* insertNode(struct Node *root, int num){
         // insert to right subtree
         root -> right = insertNode(root -> right, num);
     }
+    return root;
 }
 
 void inOrderTraversal(struct Node *root){
