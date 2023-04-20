@@ -34,8 +34,6 @@ void buildMaxHeap(int arr[], int n){
     for (int i = n/2 - 1; i >= 0; i--){
         maxHeapify(arr, n, i);
     }
-    // or
-    // maxHeapify(arr, n, 0);
 }
 
 void insertMaxHeap(int arr[], int *n, int key){
@@ -72,11 +70,20 @@ void heapSort(int arr[], int n){
     }
 }
 
+int randint(int min, int max){
+    int x = rand() % (max - min + 1) + min;
+    return x;
+}
+
 
 
 
 int main() {
-    int arr[] = {52, 69, 37, 22, 31};
+    srand(time(NULL));
+    int arr[20];
+    for(int i = 0; i < 20; i++){
+        arr[i] = randint(0, 69);
+    }
     int n = sizeof(arr) / sizeof(arr[0]);
 
     printf("Original Array:\n");
@@ -84,18 +91,21 @@ int main() {
         printf("%d ", arr[i]);
     printf("\n");
 
+    // build max heap
     buildMaxHeap(arr, n);
     printf("Max Heap:\n");
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
     printf("\n");
 
+    // insert
     insertMaxHeap(arr, &n, 34);
     printf("Max Heap after inserting 34:\n");
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
     printf("\n");
 
+    // remove
     int max = removeMaxHeap(arr, &n);
     printf("Max Element removed from Max Heap:\n");
     printf("%d\n", max);
@@ -105,6 +115,7 @@ int main() {
         printf("%d ", arr[i]);
     printf("\n");
 
+    // heap sort
     heapSort(arr, n);
     printf("Sorted Array using Heap Sort:\n");
     for (int i = 0; i < n; i++)
